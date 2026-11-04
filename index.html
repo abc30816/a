@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101419" />
+    <title>San Andreas Web Engine</title>
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="game" aria-label="3D game viewport"></canvas>
+      <section id="boot" class="boot-panel">
+        <div class="eyebrow">INDEPENDENT BROWSER ENGINE · MILESTONE 0.1</div>
+        <h1>SAN ANDREAS <span>WEB ENGINE</span></h1>
+        <p class="intro">Load your own installed game folder. Files stay in this browser session; nothing is uploaded.</p>
+        <label class="pick-button" for="game-folder">SELECT GAME FOLDER</label>
+        <input id="game-folder" type="file" webkitdirectory directory multiple />
+        <div class="requirements">
+          <b>Expected folders</b>
+          <code>models/ · data/ · anim/ · audio/</code>
+          <small>Start by selecting the folder that contains <code>gta_sa.exe</code>.</small>
+        </div>
+        <div id="boot-status" class="status">Waiting for a game folder.</div>
+        <div class="progress-track"><div id="progress-fill"></div></div>
+      </section>
+      <div id="hud" class="hud hidden">
+        <div class="hud-top"><b>SA<span>WEB</span></b><span id="hud-state">LOADING WORLD</span></div>
+        <div id="hud-location">LOS SANTOS · GANTON</div>
+        <div class="hud-help">WASD move · mouse look · Shift sprint · Space jump · Esc release mouse</div>
+      </div>
+      <aside id="diagnostics" class="diagnostics hidden"></aside>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
